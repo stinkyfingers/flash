@@ -1,0 +1,22 @@
+.go {
+  background-color: var(--blue);
+  font-size: 2em;
+  border: none;
+  border-radius: .2em;
+}
+.go:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.goButton {
+  padding: 1em;
+}
+
+input {
+  font-size: 2em;
+  width: 2em;
+  margin: .4em;
+  text-align: center;
+  border-radius: .2em;
+}
