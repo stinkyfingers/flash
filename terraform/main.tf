@@ -98,7 +98,7 @@ resource "aws_cloudfront_distribution" "flash" {
   }
 }
 
-resource "aws_route53_record" "beanie" {
+resource "aws_route53_record" "flash" {
   zone_id = "Z3P68RXJ4VECYX"
   name    = "flash.john-shenk.com"
   type    = "A"
