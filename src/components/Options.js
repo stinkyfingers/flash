@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Store from '../store';
+import '../css/options.css';
 
 const numbers = [1,2,3,4,5,6,7,8,9,10,11,12];
 const operations = ['+','-','*','/'];
@@ -50,10 +51,10 @@ const Options = () => {
   const renderNumbers = () => {
     const opts = numbers.map((n) => {
       return (
-        <React.Fragment key={`number-${n}`}>
+        <span className='number' key={`number-${n}`}>
         <label>{n}</label>
         <input type='checkbox' name='number' value={n} onChange={handleChange} />
-        </React.Fragment>
+        </span>
       );
     });
 
@@ -67,22 +68,22 @@ const Options = () => {
   const renderOperations = () => {
     const opts = operations.map((n) => {
       return (
-        <React.Fragment key={`operation-${n}`}>
+        <span className='operation' key={`operation-${n}`}>
         <label>{n}</label>
         <input type='checkbox' name='operations' value={n} onChange={handleChange} />
-        </React.Fragment>
+        </span>
       );
     });
 
     return (
-      <div className='numbers'>
+      <div className='operations'>
         {opts}
       </div>
     );
   };
 
   return (
-    <div className='Options'>
+    <div className='options'>
       {renderNumbers()}
       {renderOperations()}
     </div>

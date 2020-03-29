@@ -1,0 +1,27 @@
+.options {
+  margin: 2em 0;
+}
+.number,.operation {
+  padding-left: 1em;
+}
+.numbers>span>label,.operations>span>label {
+  font-size: 2em;
+}
+.numbers>span>input,.operations>span>input {
+  font-size: 1em;
+  -webkit-appearance:none;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid var(--black);
+  margin: 0 .2em;
+}
+
+.numbers>span>input:checked,.operations>span>input:checked {
+  background: var(--black);
+}
+
+.numbers>span>input:hover,.operations>span>input:hover {
+  cursor: pointer;
+}

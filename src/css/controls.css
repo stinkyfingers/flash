@@ -1,0 +1,13 @@
+.controls {
+  margin: 2em 0;
+}
+.startstop {
+  font-size: 2em;
+  background-color: var(--green);
+  border-radius: .2em;
+}
+
+.startstop:hover {
+  opacity: .8;
+  cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Store from '../store';
 import '../css/card.css';
 
@@ -8,6 +8,23 @@ const Card = () => {
   const [index, setIndex] = useState(0);
   const [problem, setProblem] = useState(cards[index]);
   const [answer, setAnswer] = useState('');
+  const answerRef = useRef(null);
+
+
+
+  useEffect(() => {
+    // const handleKey = (e) => {
+    //   if (e.keyCode === 13) {
+    //     handleClick();
+    //     // answerRef.current.click()
+    //   }
+    // };
+    if (answerRef && answerRef.current) answerRef.current.focus();
+    // document.addEventListener("keydown", handleKey, false);
+    // return () => {
+    //   document.removeEventListener("keydown", handleKey, false);
+    // };
+  }, []);
 
   const handleClick = () => {
     const result = (parseInt(answer, 10) !== problem.answer) ?
@@ -26,6 +43,7 @@ const Card = () => {
     if (index + 1 >= cards.length) {
       store.set('running')(false);
     }
+    if (answerRef && answerRef.current) answerRef.current.focus();
   };
 
   const renderProblem = () => {
@@ -35,7 +53,7 @@ const Card = () => {
       <input type='text' name='operation' disabled value={problem.operation} />
       <input type='text' name='second' disabled value={problem.second} />
       <span className='equals'>=</span>
-      <input type='text' name='answer' onChange={(e) => {setAnswer(e.target.value)}} value={answer}/>
+      <input type='text' name='answer' onChange={(e) => {setAnswer(e.target.value)}} value={answer} ref={answerRef} />
       <div className='goButton'><button className='go' onClick={handleClick} disabled={!answer.length}>Go</button></div>
     </React.Fragment>);
   };

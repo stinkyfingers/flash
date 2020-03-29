@@ -105,7 +105,7 @@ resource "aws_route53_record" "flash" {
 
   alias {
     name                   = aws_cloudfront_distribution.flash.domain_name
-    zone_id                = "Z2FDTNDATAQYW2"
+    zone_id                = aws_cloudfront_distribution.flash.hosted_zone_id
     evaluate_target_health = false
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Store from '../store';
+import '../css/results.css';
 
 const Card = () => {
   const store = Store.useStore();

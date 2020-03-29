@@ -1,5 +1,6 @@
 import React from 'react';
 import Store from '../store';
+import '../css/controls.css';
 
 const Controls = () => {
   const store = Store.useStore();
@@ -19,13 +20,13 @@ const Controls = () => {
 
   const handleClick = () => {
     if (!running) {
-      console.log('here')
       const err = validate();
       if (err) {
         store.set('error')(err);
         return;
       }
       store.set('cards')(makeCards())
+      store.set('results')([]);
     };
     store.set('running')(!running);
   };
