@@ -91,7 +91,7 @@ resource "aws_cloudfront_distribution" "flash" {
 }
 
   viewer_certificate {
-      acm_certificate_arn            = "arn:aws:acm:us-east-1:671958020402:certificate/ecf6d11e-1886-4666-9a42-a00252125b22"
+      acm_certificate_arn            = "arn:aws:acm:us-east-1:671958020402:certificate/fc7ab094-b641-4898-8aca-24739e555f73"
       cloudfront_default_certificate = false
       minimum_protocol_version       = "TLSv1.1_2016"
       ssl_support_method             = "sni-only"
